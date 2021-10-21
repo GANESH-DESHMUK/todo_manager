@@ -25,4 +25,11 @@ class UsersController < ApplicationController
     resultant_text = "Hello, #{name} we have created a user for you with email: #{email}"
     render plain: resultant_text
   end
+
+  def login
+    email = params[:email]
+    password = params[:password]
+    user = User.find_by(email: email, password: password)
+    render plain: user.present?
+  end
 end
