@@ -22,7 +22,7 @@ class UsersController < ApplicationController
       password: password
     )
 
-    resultant_text = " created a user #{user} having email id: #{email}"
+    resultant_text = " created a user #{name} having email id: #{email}"
     render plain: resultant_text
   end
 
