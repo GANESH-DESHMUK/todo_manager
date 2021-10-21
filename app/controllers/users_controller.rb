@@ -17,7 +17,7 @@ class UsersController < ApplicationController
     new_user = User.create!(
       name: name,
       email: email,
-      password: password,
+      password: password
     )
 
     resultant_text = "Hello, #{name} we have created a user for you with email: #{email}"
