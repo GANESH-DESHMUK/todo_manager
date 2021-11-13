@@ -8,7 +8,6 @@
       <li class="TodoItem">
         <label class="TodoItem-container">
           <%= check_box_tag "completed", "yes", todo.completed, class: "TodoItem__Checkbox" %>
-          <input class="TodoItem-checkbox" type="checkbox" />
           <% if todo.completed %>
             <p class="TodoItem__StrikedText" >
               <%= todo.todo_text %>
