@@ -120,6 +120,12 @@ background-color: #F1EDF7;
  .TodoItem-container:hover .TodoItem-delete{
    visibility:visible;
  }
+ .TodoItem__StrikedText {
+  font-family: OpenSans;
+  font-size: 16px;
+  margin-top: 4px;
+  text-decoration-line: line-through;
+}
 .TodoItem-duemonth {
   font-size: 10px;
   margin-left: 5px;
