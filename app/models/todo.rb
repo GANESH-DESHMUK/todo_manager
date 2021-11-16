@@ -7,15 +7,15 @@ class Todo < ActiveRecord::Base
   end
 
   def self.overdue
-    where("due_date < ? and (not completed)", Date.today)
+    where("due_date < ? and (not completed)", Date.today).order(:due_date)
   end
 
   def self.due_later
-    where("due_date > ?", Date.today)
+    where("due_date > ?", Date.today).order(:due_date)
   end
 
   def self.completed
-    where(completed: true)
+    all.where(completed: true)
   end
 
   def self.show_list
