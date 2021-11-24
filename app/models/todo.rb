@@ -2,6 +2,7 @@ require "date"
 require "active_record"
 
 class Todo < ActiveRecord::Base
+  belongs_to :user
   def self.due_today
     where("due_date = ?", Date.today)
   end
