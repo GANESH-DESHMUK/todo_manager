@@ -1,0 +1,35 @@
+.Users_main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 80px;
+  color: #453c52;
+}
+
+.Users_title {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.Form_section {
+  margin-bottom: 30px;
+}
+
+.Form_input {
+  padding: 8px;
+  font-size: 20px;
+}
+
+.FormInput_label {
+  color: #555555;
+  font-size: 20px;
+  margin-bottom: 8px;
+}
+
+.Form_submit {
+  font-size: 20px;
+  padding: 10px;
+  background-color: #009900;
+  border: 0;
+  border-radius: 4px;
+}
