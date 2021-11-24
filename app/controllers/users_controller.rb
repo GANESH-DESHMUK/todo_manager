@@ -1,35 +1,55 @@
 class UsersController < ApplicationController
   skip_before_action :verify_authenticity_token
 
-  def index
-    render plain: User.all.map { |user| user.to_pleasent_string }.join("\n")
-  end
-
-  def show
-    id = params[:id]
-    user = User.find(id)
-    render plain: user.to_pleasent_string
+  def new
+    render "users/new"
   end
 
   def create
-    name = params[:name]
-    email = params[:email]
-    password = params[:password]
-
-    new_user = User.create!(
-      name: name,
-      email: email,
-      password: password,
+    new_user = User.new(
+      first_name: params[:first_name],
+      last_name: params[:last_name],
+      email: params[:email],
+      password: params[:password],
     )
-
-    resultant_text = " created a user #{name} having email id: #{email}"
-    render plain: resultant_text
+    if new_user.save
+      session[:current_user_id] = new_user.id
+      redirect_to todos_path
+    else
+      flash[:error] = new_user.errors.full_messages.join(", ")
+      redirect_to "/users/new"
+    end
   end
 
-  def login
-    email = params[:email]
-    password = params[:password]
-    user = User.find_by(email: email, password: password)
-    render plain: user.present?
-  end
+  #def index
+  # render plain: User.all.map { |user| user.to_pleasent_string }.join("\n")
+  #end
+
+  #def show
+  # id = params[:id]
+  #user = User.find(id)
+  #render plain: user.to_pleasent_string
+  #end
+
+  #def create
+  # name = params[:name]
+  #email = params[:email]
+  #password = params[:password]
+
+  #new_user = User.create!(
+  # name: name,
+  # email: email,
+  # password: password,
+  # )
+
+  # resultant_text = " created a user #{name} having email id: #{email}"
+  # render plain: resultant_text
+  # end
+
+  # def login
+  # email = params[:email]
+  # password = params[:password]
+  # user = User.find_by(email: email, password: password)
+  # render plain: user.present?
+  #end
 end
