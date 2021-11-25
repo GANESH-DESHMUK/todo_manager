@@ -12,6 +12,7 @@ class UsersController < ApplicationController
       email: params[:email],
       password_digest: digest(params[:password]),
     )
+    redirect_to "/"
   end
 
   #def index
