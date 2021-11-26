@@ -8,3 +8,11 @@
   font-size: 16px;
   margin-bottom: 30px;
 }
+
+.UserHeader
+{
+padding:10px;
+background-color: lightgray;
+font-size: 14px;
+margin-bottom: 10px;
+}
