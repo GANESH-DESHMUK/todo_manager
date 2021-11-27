@@ -13,7 +13,7 @@ class UsersController < ApplicationController
       password: params[:password],
     )
     if new_user.save
-      ession[:current_user_id] = new_user.id
+      session[:current_user_id] = new_user.id
       redirect_to "/"
     else
       flash[:error] = new_user.errors.full_messages.join(", ")
