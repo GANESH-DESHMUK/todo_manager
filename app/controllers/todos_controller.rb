@@ -8,7 +8,6 @@ class TodosController < ApplicationController
     id = params[:id]
     todo = current_user.todos.find(id)
     render plain: todo.to_pleasant_string
-    #render plain: todo.to_pleasant_string
   end
 
   def create
