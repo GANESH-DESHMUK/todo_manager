@@ -5,7 +5,9 @@
     <%= form_with url: sessions_path do |form| %>
       <div class="Form_section">
         <p class="FormInput_label" > Email id: </p>
-        <%= form.email_field :email, class: "Form_input" %>
+        <%= form.email_field :email,
+                      class: "Form_input",
+                      autofocus: "autofocus" %>
       </div>
       <div class="Form_section">
         <p class="FormInput_label" >Password: </p>
